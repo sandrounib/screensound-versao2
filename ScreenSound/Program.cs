@@ -43,7 +43,6 @@ void ExibirLogo()
 ");
     Console.WriteLine("Boas vindas ao Screen Sound 3.0!");
 }
-
 void ExibirOpcoesDoMenu()
 {
     ExibirLogo();
