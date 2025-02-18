@@ -9,8 +9,7 @@ namespace ScreenSound.Banco
 {
     internal class DAL<T> where T : class
     {
-        private readonly ScreenSoundContext context;
-
+        public readonly ScreenSoundContext context;
         public DAL(ScreenSoundContext context)
         {
             this.context = context;
