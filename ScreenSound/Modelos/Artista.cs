@@ -1,5 +1,9 @@
-﻿namespace ScreenSound.Modelos; 
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
+namespace ScreenSound.Modelos;
+
+[Table("Artistas")]
 internal class Artista 
 {
     private List<Musica> musicas = new List<Musica>();
@@ -11,10 +15,13 @@ internal class Artista
         FotoPerfil = "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png";
     }
 
+
+    [Key]
+    public int Id { get; set; }
     public string Nome { get; set; }
     public string FotoPerfil { get; set; }
     public string Bio { get; set; }
-    public int Id { get; set; }
+
 
     public void AdicionarMusica(Musica musica)
     {
