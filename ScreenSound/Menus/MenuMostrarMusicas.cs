@@ -5,13 +5,13 @@ namespace ScreenSound.Menus;
 
 internal class MenuMostrarMusicas : Menu
 {
-    public override void Executar(ArtistaDAL artistaDAL)
+    public override void Executar(DAL<Artista> artistaDal)
     {
-        base.Executar(artistaDAL);
+        base.Executar(artistaDal);
         ExibirTituloDaOpcao("Exibir detalhes do artista");
         Console.Write("Digite o nome do artista que deseja conhecer melhor: ");
         string nomeDoArtista = Console.ReadLine()!;
-        var artistaRecuperado = artistaDAL.RecuperarPeloNome(nomeDoArtista);
+        var artistaRecuperado = artistaDal.RecuperarPor(a => a.Nome.Equals (nomeDoArtista) ); //Lambida:o nome do artista no banco tem que ser igual ao nome que o usuario digitou
         if (artistaRecuperado is not null)
         {
             Console.WriteLine("\nDiscografia:");

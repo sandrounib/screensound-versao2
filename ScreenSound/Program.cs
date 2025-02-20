@@ -3,25 +3,11 @@ using ScreenSound.Menus;
 using ScreenSound.Modelos;
 
 var context = new ScreenSoundContext();
-var artistaDAL = new ArtistaDAL(context);
-var musicaDAL = new MusicaDAL(context);
-
-/* var musicaNova = new Musica("Descer pra BC"); //{ Id = 3 };
-//var musicaNova2 = new Musica("Tacar meu celular na parede") { Id = 2};
-musicaDAL.Adicionar(musicaNova);
-//musicaDAL.Atualizar(musicaNova2);
-//musicaDAL.Deletar(musicaNova);
-
-
-var listaDeMusicas = musicaDAL.Listar();
-foreach (var musica in listaDeMusicas)
-{
-    Console.WriteLine(musica);
-}
+//20
 
 return;
 
-*/
+
 
 Dictionary<int, Menu> opcoes = new();
 opcoes.Add(1, new MenuRegistrarArtista());

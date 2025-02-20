@@ -13,7 +13,7 @@ internal class Menu
         Console.WriteLine(titulo);
         Console.WriteLine(asteriscos + "\n");
     }
-    public virtual void Executar(ArtistaDAL artistaDAL)
+    public virtual void Executar(DAL<Artista> artistaDal) //O tipo do artistaDal tem que ser uma classe tipo artista que foi determinado no classe DAL, (DAL<T> where T : classe)
     {
         Console.Clear();
     }

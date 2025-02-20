@@ -1,6 +1,12 @@
-﻿namespace ScreenSound.Modelos; 
+﻿using ScreenSound.Banco;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-internal class Artista 
+namespace ScreenSound.Modelos;
+
+[Table("Artista")]//Para faciliar o acesso a tabela no banco
+
+internal class Artista
 {
     private List<Musica> musicas = new List<Musica>();
 
@@ -14,6 +20,7 @@ internal class Artista
     public string Nome { get; set; }
     public string FotoPerfil { get; set; }
     public string Bio { get; set; }
+    [Key] //Deverá usar Key no Id do banco devido está usando [Table("Artista")]
     public int Id { get; set; }
 
     public void AdicionarMusica(Musica musica)
