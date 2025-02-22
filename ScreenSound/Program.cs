@@ -5,7 +5,7 @@ using ScreenSound.Modelos;
 var context = new ScreenSoundContext();
 var artistaDAL = new ArtistaDAL(context);
 var musicaDAL = new MusicaDAL(context);
-
+//teste
 /* var musicaNova = new Musica("Descer pra BC"); //{ Id = 3 };
 //var musicaNova2 = new Musica("Tacar meu celular na parede") { Id = 2};
 musicaDAL.Adicionar(musicaNova);
