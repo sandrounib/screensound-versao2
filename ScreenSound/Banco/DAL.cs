@@ -9,33 +9,33 @@ namespace ScreenSound.Banco
 {
     internal class DAL<T> where T : class
     {
-        public readonly ScreenSoundContext context;
+        public readonly ScreenSoundContext _context;
         public DAL(ScreenSoundContext context)
         {
-            this.context = context;
+            _context = context;
         }
         public IEnumerable<T> Listar()
         {
-            return context.Set<T>().ToList();
+            return _context.Set<T>().ToList();
         }
         public void Adicionar(T objeto)
         {
-            context.Set<T>().Add(objeto);
-            context.SaveChanges();
+            _context.Set<T>().Add(objeto);
+            _context.SaveChanges();
         }
         public void Atualizar(T objeto)
         {
-            context.Set<T>().Update(objeto);
-            context.SaveChanges();
+            _context.Set<T>().Update(objeto);
+            _context.SaveChanges();
         }
         public void Deletar(T objeto)
         {
-            context.Set<T>().Remove(objeto);
-            context.SaveChanges();
+            _context.Set<T>().Remove(objeto);
+            _context.SaveChanges();
         }
         public T? RecuperarPor(Func<T, bool> vefificacao)
         {
-            return context.Set<T>().FirstOrDefault(vefificacao);           
+            return _context.Set<T>().FirstOrDefault(vefificacao);           
         }    
     }
 }
