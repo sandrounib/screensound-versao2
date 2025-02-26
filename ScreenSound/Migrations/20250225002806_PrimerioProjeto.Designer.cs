@@ -11,8 +11,8 @@ using ScreenSound.Banco;
 namespace ScreenSound.Migrations
 {
     [DbContext(typeof(ScreenSoundContext))]
-    [Migration("20250221235721_ProjetoInicial")]
-    partial class ProjetoInicial
+    [Migration("20250225002806_PrimerioProjeto")]
+    partial class PrimerioProjeto
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -46,7 +46,7 @@ namespace ScreenSound.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Artistas");
+                    b.ToTable("Artista");
                 });
 
             modelBuilder.Entity("ScreenSound.Modelos.Musica", b =>
@@ -63,7 +63,7 @@ namespace ScreenSound.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Musicas");
+                    b.ToTable("Musica");
                 });
 #pragma warning restore 612, 618
         }

@@ -3,10 +3,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ScreenSound.Modelos;
 
-[Table("Artistas")]
-internal class Artista 
+[Table("Artista")]
+public class Artista 
 {
-    private List<Musica> musicas = new List<Musica>();
+    public virtual ICollection<Musica> Musicas { get; set; } = new List<Musica>();
     public Artista(string nome, string bio)
     {
         Nome = nome;
@@ -15,18 +15,18 @@ internal class Artista
     }
     [Key]
     public int Id { get; set; }
-    public string Nome { get; set; }
-    public string FotoPerfil { get; set; }
+    public string Nome { get; set; }   
     public string Bio { get; set; }
+    public string FotoPerfil { get; set; }
 
     public void AdicionarMusica(Musica musica)
     {
-        musicas.Add(musica);
+        Musicas.Add(musica);
     }
     public void ExibirDiscografia()
     {
         Console.WriteLine($"Discografia do artista {Nome}");
-        foreach (var musica in musicas)
+        foreach (var musica in Musicas)
         {
             Console.WriteLine($"Música: {musica.Nome}");
         }

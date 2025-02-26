@@ -1,12 +1,20 @@
-﻿namespace ScreenSound.Modelos;
-internal class Musica
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace ScreenSound.Modelos;
+[Table("Musica")]
+public class Musica
 {
     public Musica(string nome)
     {
         Nome = nome;
     }
-    public string Nome { get; set; }
+
+    [Key]
     public int Id { get; set; }
+    public string Nome { get; set; }
+    public int? AnoLancamento { get; set; }
+    public virtual Artista? Artista { get; set; }
     public void ExibirFichaTecnica()
     {
         Console.WriteLine($"Nome: {Nome}");      
